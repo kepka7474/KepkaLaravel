@@ -13,27 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (){
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/type/{search}', function ($search){
-    dd(explode('/', $search));
-    return response()->json([
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-        "type_id" => $type,
-        "category_id" => $category,
-
-    ]);
-})->where('search', '.*');
-
-//Route::get('/type/{type}/category/{category?}', function (int $type, ?int $category = null){
-//    return response()->json([
-//
-//        "type_id" => $type,
-//        "category_id" => $category,
-//
-//    ]);
-//});
-
+require __DIR__.'/auth.php';
 
