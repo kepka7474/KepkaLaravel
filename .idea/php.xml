@@ -113,6 +113,7 @@
       <path value="$PROJECT_DIR$/example-app/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/example-app/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/example-app/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/example-app/vendor/laravel/breeze" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
