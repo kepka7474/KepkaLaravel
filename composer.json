@@ -1,6 +1,0 @@
-{
-    "require-dev": {
-        "symfony/var-dumper": "^5.4",
-        "laravel/breeze": "^1.10"
-    }
-}
