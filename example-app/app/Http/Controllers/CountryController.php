@@ -21,7 +21,8 @@ class CountryController extends Controller
             ->get();
         /** @var Country $country */
         $country = Country::find(1);
-        $country->name;
+        $country->cities;
+
 
     }
 

@@ -21,5 +21,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/countries', function () {
+    return view('index');
+});
+
+Route::get('/cities', function () {
+    return view('cities');
+});
+
 require __DIR__.'/auth.php';
 

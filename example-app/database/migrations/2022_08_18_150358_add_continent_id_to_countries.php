@@ -14,7 +14,8 @@ class AddContinentIdToCountries extends Migration
     public function up()
     {
         Schema::table('countries', function (Blueprint $table) {
-            $table->unsignedBigInteger('continent_id');
+            $table->unsignedBigInteger('continent_id')->default(1);
+
             $table->foreign('continent_id')
                 ->references('id')
                 ->on('countries')
@@ -30,8 +31,8 @@ class AddContinentIdToCountries extends Migration
     public function down()
     {
         Schema::table('countries', function (Blueprint $table) {
-        //
+            $table->dropForeign('continent_id');
+            $table->dropColumn('continent_id');
         });
-
     }
 }

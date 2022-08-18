@@ -114,6 +114,15 @@
       <path value="$PROJECT_DIR$/example-app/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/example-app/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/example-app/vendor/laravel/breeze" />
+      <path value="$PROJECT_DIR$/example-app/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/example-app/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/example-app/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/example-app/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/example-app/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/example-app/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/example-app/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/example-app/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/example-app/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
