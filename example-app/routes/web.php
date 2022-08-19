@@ -29,5 +29,9 @@ Route::get('/cities', function () {
     return view('cities');
 });
 
+Route::get('/ci', function () {
+    echo 'cities';
+});
+
 require __DIR__.'/auth.php';
 
