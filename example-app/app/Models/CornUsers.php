@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CornOrder extends Model
+class CornUsers extends Model
 {
     use HasFactory;
 }

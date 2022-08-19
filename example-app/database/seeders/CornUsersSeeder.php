@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CornUserSeeder extends Seeder
+class CornUsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,17 +14,18 @@ class CornUserSeeder extends Seeder
      */
     public function run()
     {
-        $this->createCornUserIfNotExist('Vasya@yandex.ru', 'Vasya');
-        $this->createCornUserIfNotExist('Sanya@yandex.ru', 'Sanya');
-        $this->createCornUserIfNotExist('Petya@yandex.ru', 'Petya');
+        $this->createCornUserIfNotExist('Vasya@yandex.ru', 'Vasya', 111);
+        $this->createCornUserIfNotExist('Sanya@yandex.ru', 'Sanya', 222);
+        $this->createCornUserIfNotExist('Petya@yandex.ru', 'Petya',333);
     }
 
-    public function createCornUserIfNotExist($email, $name){
+    public function createCornUserIfNotExist($email, $name, $password){
         $corn_user = $this->getCornUserByName($email);
         if (! $corn_user) {
             DB::table('corn_users')->insert([
                 'email' => $email,
                 'name' => $name,
+                'password' => $password
             ]);
         }
     }

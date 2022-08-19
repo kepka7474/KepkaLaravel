@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CornProductFactory extends Factory
+class CornCompaniesFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,7 +14,7 @@ class CornProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->unique()->company,
         ];
     }
 }
