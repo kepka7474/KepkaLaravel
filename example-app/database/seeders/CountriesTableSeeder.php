@@ -14,29 +14,29 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->createCountryIfNotExists('Asia', 'AS');
-        $this->createCountryIfNotExists('Africa', 'AF');
-        $this->createCountryIfNotExists('America', 'AM');
+//        $this->createCountryIfNotExists('France', 'FR');
+//        $this->createCountryIfNotExists('USA', 'US');
+//        $this->createCountryIfNotExists('Russia', 'RU');
 
     }
-    private function createCountryIfNotExists(string $name, string $continent_name): void
-    {
-        $continent = $this->getCountryByName($name);
-        if (! $continent) {
-            DB::table('countries')->insert([
-                'name' => $name,
-                'continent_name' => $continent_name,
-            ]);
-        }
-    }
-    private function getCountryByName(string  $name)
-    {
-        $continent = DB::table('countries')
-            ->where('name', $name)
-//            ->orWhere('$continent_name', $name)
-            ->first();
-//            ->toSql();
-//        dd($continent);
-        return$continent;
-    }
+//    private function createCountryIfNotExists(string $name, string $continent_name): void
+//    {
+//        $continent = $this->getCountryByName($name);
+//        if (! $continent) {
+//            DB::table('countries')->insert([
+//                'name' => $name,
+//                'continent_name' => $continent_name,
+//            ]);
+//        }
+//    }
+//    private function getCountryByName(string  $name)
+//    {
+//        $continent = DB::table('countries')
+//            ->where('name', $name)
+////            ->orWhere('$continent_name', $name)
+//            ->first();
+////            ->toSql();
+////        dd($continent);
+//        return $continent;
+//    }
 }
