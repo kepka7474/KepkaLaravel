@@ -1,5 +1,10 @@
 <?php
 
+//use App\Http\Controllers\Api;
+
+//use App\Http\Controllers\Api\CountryIndexController;
+
+use App\Services\Routes\Providers\Api\ApiRoutesProvider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,25 +18,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//
+//Route::get('/api/countries', \App\Http\Controllers\Api\Countries\CountryIndexController::class)
+//    ->name('api.countries.index');
+//
+//Route::get(
+//    '/api/countries/{country}',
+//    \App\Http\Controllers\Api\Countries\CountryShowController::class
+//)
+//    ->where('country', '\d+')
+//    ->name('api.countries.show');
+//
+//Route::get('/countries', function () {
+//    return view('index');
+//});
+//
+//Route::view('/', 'cities');
+//Route::get('/r',fn() => 'Hello');
+//
+//
+//require __DIR__.'/auth.php';
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+app(ApiRoutesProvider::class)->registerRoutes();
 
-Route::get('/countries', function () {
-    return view('index');
-});
-
-Route::get('/cities', function () {
-    return view('cities');
-});
-
-Route::get('/ci', function () {
-    echo 'cities';
-});
-
-require __DIR__.'/auth.php';
-
+Route::fallback(fn() => 'Sorry');
