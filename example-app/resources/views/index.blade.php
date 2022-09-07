@@ -6,28 +6,17 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Страны</h1>
+<a href="/admin/login.php">В Админку</a>
+<h1>Компании</h1>
+
 {{--@php(print_r($country))--}}
-@foreach(\App\Models\Country::all() as $key => $country)
-    <h3>@php(print_r($country->toArray()['name']))</h3>
-
-        <ul>
-    @foreach(\App\Models\City::all() as $key => $city)
-        @if ($city['country_id'] == $country['id'])
-
-                    <li><p>@php(print_r($city->toArray()['name']))</p></li>
-        @endif
-    @endforeach
+@foreach($cities as $key => $city)
+    <ul><b><a href="city.php?id={{$city->id}}">{{$city->name}}</a></b>
+            @foreach($city->companies as $company)
+                <li><a href="company.php?id={{$company->id}}">{{$company->name}}</a></li>
+            @endforeach
         </ul>
-
-
 @endforeach
 </body>
 </html>
-{{--@foreach($users as $key => $user)--}}
-{{--    <ul><b><a href="index.php?id={{$user->id}}"> {{$user->name}}</a>--}}
-{{--            @foreach($user->books as $book)--}}
-{{--                <li>{{$book->name}}</li>--}}
-{{--            @endforeach--}}
-{{--        </b></ul>--}}
-{{--@endforeach--}}
+

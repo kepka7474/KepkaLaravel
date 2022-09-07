@@ -30,7 +30,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Country whereMyData($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Country whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Country whereUpdatedAt($value)
- * @mixin \Eloquent
+// * @mixin \Eloquent
  */
 class Country extends Model
 {
@@ -44,8 +44,8 @@ class Country extends Model
         'name',
         'continent_name',
         'my_data',
-
     ];
+
     protected $casts = [
         'my_data' => 'array',
     ];

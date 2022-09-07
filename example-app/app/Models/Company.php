@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    use HasFactory;
+//    use HasFactory;
+    public function city(){
+        return $this->hasOne(City::class, 'id', 'city_id');
+    }
 }

@@ -4,7 +4,11 @@
 
 //use App\Http\Controllers\Api\CountryIndexController;
 
+use App\Http\Controllers\Cities\CitiesController;
+use App\Http\Controllers\CmsCitiesController;
+use App\Http\Controllers\StartController;
 use App\Services\Routes\Providers\Api\ApiRoutesProvider;
+use App\Services\Routes\Providers\CMS\CMSRoutesProvider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +22,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resources([
+    'cities' => CmsCitiesController::class,
+    'categories' => \App\Http\Controllers\Cms\Categories\CmsCategoriesController::class,
+]);
+
+Route::get('/test', function (){
+    return view('test.test');
+});
+
+Route::get('/foreach', function (){
+    return view('test.foreach');
+});
+
+
+//Route::get('/hello', function (){
+//    return 'Hello world';
+//});
+//
+//$cmsRoutesProvider = app(CMSRoutesProvider::class);
+//$cmsRoutesProvider->registerRoutes();
+//
+//
+//Route::get('/api/cities', [
+//    CitiesController::class,
+//    'index']);
+//
 //Route::get('/', function () {
 //    return view('welcome');
+//});
+//
+//Route::get('/', [StartController::class, 'index']);
+//Route::get('/companies', [StartController::class, 'companies']);
+//
+//Route::get('/categories', [StartController::class, 'categories']);
+
+
+//Route::view('/api/countries', '/api/countries/index');
+
+//Route::get('/api/cities', function (){
+//    return view('cities');
 //});
 //
 //
@@ -43,6 +85,6 @@ use Illuminate\Support\Facades\Route;
 //
 //require __DIR__.'/auth.php';
 
-app(ApiRoutesProvider::class)->registerRoutes();
-
-Route::fallback(fn() => 'Sorry');
+//app(ApiRoutesProvider::class)->registerRoutes();
+//
+//Route::fallback(fn() => 'Sorry');
